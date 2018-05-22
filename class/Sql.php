@@ -24,7 +24,7 @@ foreach ($parameters as $key => $value) {
 																								
 }
 
-
+//liga a chave da query com o valor desejado ao statement
 private function setParam($statement, $key, $value){
 
 $statement->bindParam($key, $value);

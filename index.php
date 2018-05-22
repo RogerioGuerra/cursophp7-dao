@@ -10,6 +10,7 @@ require_once("config.php");
 
 $root = new Usuario();
 
+//nesse loadById já existe uma instância de SQL na classe usuario
 $root->loadById(4);
 
 echo $root;

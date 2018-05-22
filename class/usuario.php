@@ -48,7 +48,7 @@ $this->dtcadastro = $value;
    //carrega os dados do banco para o objeto 
 public function loadById($id){
 
-$sql = new Sql();
+$sql = new Sql();//cria uma instancia de SQL que extends PDO com seus métodos
 
 $results = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario = :ID", array(
 ":ID"=>$id
