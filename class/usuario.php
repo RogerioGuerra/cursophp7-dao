@@ -46,7 +46,7 @@ class Usuario{
 	}
 //_______________________________________________________
 
- //carrega os dados do banco para o objeto, alimenta, com os dados do banco, os dados que caracterizam e fazem o próprio filho dessa Classe, instanciado.
+ //carrega os dados do banco para o objeto, alimenta, com os dados do banco, os dados que caracterizam e fazem o próprio filho dessa Classe, instanciado ao usar a função.
 	public function loadById($id){
 
 	$sql = new Sql();//cria uma instancia de SQL que extends PDO com seus métodos
@@ -66,7 +66,8 @@ if (count($results) > 0){ //poderia ser if(isset($results[0]))   ........se exis
 } 
 
 }
-/////////////////////////////////////////////////////
+//_____________________________________________________________
+
 public static function getList(){
 
 	$sql = new SQL();
@@ -75,7 +76,44 @@ public static function getList(){
 
 }
 
+//______________________________________________________________
 
+public static function search($login){
+
+	$sql = new SQL();
+return $sql->select("SELECT * FROM tb_usuarios WHERE deslogin LIKE :SEARCH ORDER BY deslogin",array(':SEARCH'=> "%".$login."%"));
+
+}
+//__________________________________________________________________
+
+public function login($login, $password){
+
+	$sql = new Sql();//cria uma instancia de SQL que extends PDO com seus métodos
+
+//em uma variável q é um SQL_filho atribui o q é desejado pelo código...no parametro da function
+
+$results = $sql->select("SELECT * FROM tb_usuarios WHERE deslogin = :LOGIN AND dessenha =:PASSWORD", array(    
+	":LOGIN"=>$login,
+	":PASSWORD"=>$password
+));
+
+
+if (count($results) > 0){   
+	$row = $results[0];
+
+	$this->setIdusuario($row['idusuario']);
+	$this->setDeslogin($row['deslogin']);
+	$this->setDessenha($row['dessenha']);
+	$this->setDtcadastro(new DateTime($row['dtcadastro']));
+} else {
+
+	throw new Exception("Login e/ou senha inválidos.");
+}
+
+
+
+
+}
 
 
 
