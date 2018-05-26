@@ -26,10 +26,10 @@ ao solicitar duas vezes o comando json_encode
 a função não retorna corretamente como em uma única chamada
 pelo menos no chrome*/
 
-//
-////_________________________________________________________________________________
+//_________________________________________________________________________________
 
 //carregga uma lista de usuarios buscando pelo login
+
 //$search = Usuario::search("ji");
 //echo json_encode($search);
 
