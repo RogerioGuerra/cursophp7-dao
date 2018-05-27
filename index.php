@@ -43,24 +43,39 @@ pelo menos no chrome*/
 
 //_____________________________________________________________
 
-       //esse código abaixo inseriu um novo aluno porém o retorno __toString gerou um erro:
+     
 
-/*
+/* 
+esse código abaixo inseriu um novo aluno porém o retorno __toString gerou um erro:
+e não imprimiu senão o que segue:
 Fatal error: Method Usuario::__toString() must not throw an exception, caught Error: Call to a member function format() on null in C:\xampp\htdocs\DAO\index.php on line 0
 */
 
 
-$aluno = new Usuario("aluno", "@alunO");
+/*$aluno = new Usuario("aluno", "@alunO");
 
 $aluno->insert();
 
-echo $aluno;  
+echo $aluno;  */
 
-/*/______________________________________________________________
+//______________________________________________________________
+
+/*
+update
+
 $usuario  = new Usuario();
 
 $usuario->loadById(8);
 $usuario->update("professor", "testeprofessor");
+echo $usuario;*/
+
+//____________________________________________________________
+
+$usuario = new Usuario();
+$usuario->loadById(9);
+$usuario->delete();
+
 echo $usuario;
-*/
+
+
 ?>
