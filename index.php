@@ -37,8 +37,30 @@ pelo menos no chrome*/
 
 //carrega um usuario usando o login e a senha
 
-$usuario = new Usuario();
-$usuario->login("jimmy", "Rock");
-echo $usuario;
+//$usuario->login("jimmy", "Rock");
+//echo $usuario;
 // echo $usuario->login("jimmy", "ok");// imprime uma Exception
+
+//_____________________________________________________________
+
+       //esse código abaixo inseriu um novo aluno porém o retorno __toString gerou um erro:
+
+/*
+Fatal error: Method Usuario::__toString() must not throw an exception, caught Error: Call to a member function format() on null in C:\xampp\htdocs\DAO\index.php on line 0
+*/
+
+
+$aluno = new Usuario("aluno", "@alunO");
+
+$aluno->insert();
+
+echo $aluno;  
+
+/*/______________________________________________________________
+$usuario  = new Usuario();
+
+$usuario->loadById(8);
+$usuario->update("professor", "testeprofessor");
+echo $usuario;
+*/
 ?>
