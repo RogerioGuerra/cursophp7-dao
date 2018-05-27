@@ -2,20 +2,25 @@
 
 require_once("config.php");
 
-// $sql = new Sql();
+/*
+lista
+$sql = new Sql();
 
-// $usuarios = $sql->select("SELECT * FROM tb_usuarios");
+$usuarios = $sql->select("SELECT * FROM tb_usuarios");
 
-// echo json_encode($usuarios);
+echo json_encode($usuarios);*/
 
 //_______________________________________________________________________________
 
-//$root = new Usuario();
+/*
+loadById
 
-//nesse loadById já existe uma instância de SQL na classe usuario
-//$root->loadById(8);
+$root = new Usuario();
 
-//echo $root;
+nesse loadById já existe uma instância de SQL na classe usuario
+$root->loadById(8);
+
+echo $root;*/
 
 //_____________________________________________________________________________
 
@@ -28,27 +33,29 @@ pelo menos no chrome*/
 
 //_________________________________________________________________________________
 
-//carregga uma lista de usuarios buscando pelo login
+/*carregga uma lista de usuarios buscando pelo login
 
-//$search = Usuario::search("ji");
-//echo json_encode($search);
+$search = Usuario::search("ji");
+echo json_encode($search);*/
 
 //_________________________________________________________________________________
 
-//carrega um usuario usando o login e a senha
+/*carrega um usuario usando o login e a senha
 
-//$usuario->login("jimmy", "Rock");
-//echo $usuario;
-// echo $usuario->login("jimmy", "ok");// imprime uma Exception
+$usuario->login("jimmy", "Rock");
+echo $usuario;
+ echo $usuario->login("jimmy", "Rock");*/
 
 //_____________________________________________________________
 
      
 
 /* 
+insert
 esse código abaixo inseriu um novo aluno porém o retorno __toString gerou um erro:
 e não imprimiu senão o que segue:
 Fatal error: Method Usuario::__toString() must not throw an exception, caught Error: Call to a member function format() on null in C:\xampp\htdocs\DAO\index.php on line 0
+não achei erro no código ou solução na internet
 */
 
 
@@ -71,11 +78,13 @@ echo $usuario;*/
 
 //____________________________________________________________
 
+/*
+delete
 $usuario = new Usuario();
 $usuario->loadById(9);
 $usuario->delete();
 
-echo $usuario;
+echo $usuario;*/
 
 
 ?>
